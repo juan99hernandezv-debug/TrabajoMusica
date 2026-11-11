@@ -1,31 +1,163 @@
-body{
+body {
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
 }
 
-header{
-    height: 335px;
+header {
+    position: relative;
+}
+
+header img {
+    display: block;
+    width: 100%;
+}
+
+header h1 {
+    position: absolute;
+    inset: 0;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow: hidden;
+    gap: 0.3em;
+    font-size: clamp(20px, 5vw, 48px);
+    font-weight: 300;
+    color: white;
 }
 
-header img{
+header .suave {
+    opacity: 0.4;
+}
+
+header .fuerte {
+    font-weight: 500;
+}
+
+main section {
+    max-width: 1050px;
+    margin: auto;  
+    padding: 85px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+main section img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+main section div {
+    width: 100;
+    max-width: 440;
+}
+
+main section h2 {
+    font-size: 25px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+main section h2 span {
+    color: #ed5268;
+}
+
+main section p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    max-width: 350px;
+}
+
+button {
+    background: #f34e67;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 28px;
+    font-size: 9px;
+    cursor: pointer;
+}
+
+
+main section:nth-child(3) {
+    max-width: none;
+    min-height: 250px;
+    position: relative;
+    padding: 50px max(30px, calc((100% - 1050px) / 2 + 30px));
+    color: white;
+}
+
+main section:nth-child(3) img {
     position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: brightness(0.7);
+    filter: brightness(0.6);
 }
-header h1{
-    color: white;
-    font-size: 65px;
-    font-weight: 300px;
-    text-align: center;
+
+main section:nth-child(3) div {
+    grid-column: 2;
     position: relative;
 }
-header span{
-    font-weight: bold;
+
+footer {
+    background: linear-gradient(110deg, #ff4961, #f51c65);
+    color: white;
+    padding: 40px 10%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+footer h4 {
+    font-size: 10px;
+    margin-bottom: 15px;
+}
+
+footer a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 9px;
+    margin-bottom: 8px;
+}
+
+footer p {
+    width: 100%;
+    text-align: center;
+    font-size: 9px;
+    margin-top: 35px;
+}
+
+@media (max-width: 650px) {
+
+    main section {
+        flex-direction: column;
+        padding: 50px 25px;
+        gap: 30px;
+    }
+
+    main section img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    main section:nth-child(3) {
+        padding: 50px 25px;
+        justify-content: center;
+    }
+
+    main section:nth-child(3) img {
+        max-width: none;
+    }
+
+    footer {
+        text-align: center;
+    }
 }
